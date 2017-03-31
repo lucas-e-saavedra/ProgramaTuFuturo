@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">General</string>
+    <string name="buenos_dias">¡Hello! good morning</string>
+    <string name="saludo">I\'m  your first app</string>
+    <string name="preguntar_tunombre">What\'s your name?</string>
+    <string name="tunombre">your name</string>
+    <string name="preguntar_pronombre">How should I refer to you?</string>
+    <string-array name="pronombres">
+        <item>Mr.</item>
+        <item>Mrs.</item>
+        <item>Ms.</item>
+        <item>Your Majesty</item>
+    </string-array>
+    <string name="saludar">Greet</string>
+</resources>

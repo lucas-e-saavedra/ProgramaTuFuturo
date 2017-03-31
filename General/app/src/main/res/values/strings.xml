@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">General</string>
+    <string name="buenos_dias">¡Hola! buenos días</string>
+    <string name="saludo">Yo soy tu primer app</string>
+    <string name="preguntar_tunombre">Me gustaria saber como te llamas</string>
+    <string name="tunombre">tu nombre</string>
+    <string name="preguntar_pronombre">¿Como debo referirme a ti?</string>
+    <string-array name="pronombres">
+        <item>Sr.</item>
+        <item>Sra.</item>
+        <item>Srta.</item>
+        <item>Su majestad</item>
+    </string-array>
+    <string name="saludar">Saludar</string>
 </resources>

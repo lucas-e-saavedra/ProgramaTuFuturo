@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2">
+    <LinearLayout
+        style="@style/MiColumna">
+
+        <TextView
+            style="@style/MisTextos"
+            android:text="@string/buenos_dias" />
+        <TextView
+            style="@style/MisTextos"
+            android:text="@string/saludo"/>
+        <TextView
+            style="@style/MisTextos"
+            android:text="@string/preguntar_tunombre"/>
+        <EditText
+            android:id="@+id/et_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tunombre"
+            android:inputType="textCapWords"
+            android:imeOptions="actionDone"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/MiColumna">
+        <TextView
+            style="@style/MisTextos"
+            android:text="@string/preguntar_pronombre"/>
+        <Spinner
+            android:id="@+id/sp_pronombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/pronombres" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btn_saludar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saludar"
+                android:onClick="saludar"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorAccent"
+                android:drawableLeft="@drawable/ic_sentiment_very_satisfied_white_48dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
