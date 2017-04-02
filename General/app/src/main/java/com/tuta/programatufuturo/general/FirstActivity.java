@@ -22,14 +22,6 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     public void saludar(View v){
-        String textoSaludo = "Hola "+inputPronombre.getSelectedItem().toString()+" "+inputNombre.getText().toString();
-        new AlertDialog.Builder(this).setTitle(R.string.app_name).setMessage(textoSaludo)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-                        startActivity(intent);
-                    }
-                }).create().show();
+       Toast.makeText(this, "Que tenga un buen dia", Toast.LENGTH_LONG).show();
     }
 }
