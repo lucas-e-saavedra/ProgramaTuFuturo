@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:orientation="vertical"
+    tools:context="com.example.tuta.calculadora.MainActivitycalculator">
+
+    <EditText
+        android:id="@+id/I_Altura"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint='"Cual es su Altura?"'
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/I_Peso"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:hint='"Cual es su Peso?"'
+            android:inputType="numberDecimal"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/B_Calcular"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:elevation="1dp"
+            android:text="Button"
+            android:onClick="ActionCalcular"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/L_Resultado"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@android:color/background_light"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+</LinearLayout>
