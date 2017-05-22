@@ -10,11 +10,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tutacode.infonube.data.APIArticulos;
+import com.tutacode.infonube.data.Articulo;
 import com.tutacode.infonube.data.RespuestaConsultaDeArticulos;
 
+import java.util.ArrayList;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     TextView unTextView;
@@ -34,24 +40,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void consultarListaDeArticulos(){
-        Log.d("ETIQUETA LOGS","inicio la consulta de articulos");
-        unBoton.setVisibility(View.GONE);
-        APIArticulos apiArticulos = APIArticulos.retrofit.create(APIArticulos.class);
-        apiArticulos.consultarListaDeArticulos().enqueue(new Callback<RespuestaConsultaDeArticulos>() {
+    void consultarListaDeArticulos() {
+        unTextView.setText("consultando lista de articuos");
+        Log.d("ETIQUETA LOGS", "inicio la consulta de articulos");
+        Retrofit RETRO=new Retrofit.Builder().baseUrl("https://script.google.com").addConverterFactory(GsonConverterFactory.create()).build();
+        APIArticulos Interface = RETRO.create(APIArticulos.class);
+        Interface.consultarListaDeArticulos().enqueue(new Callback<RespuestaConsultaDeArticulos>() {
             @Override
             public void onResponse(Call<RespuestaConsultaDeArticulos> call, Response<RespuestaConsultaDeArticulos> response) {
-                unBoton.setVisibility(View.VISIBLE);
-                RespuestaConsultaDeArticulos respuesta = response.body();
-                unTextView.setText(respuesta.ultimaActualizacion);
+                unTextView.setText(response.body().ultimaActualizacion);
+                Articulo[] Art = response.body().contenido;
+                if (Art.length < 3){
+                    unTextView.setText("La lista tiene mas de 3 articulos");
+                }
+                else {
+                    unTextView.setText("hay mas de 3");
+                }
             }
 
             @Override
             public void onFailure(Call<RespuestaConsultaDeArticulos> call, Throwable t) {
-                unBoton.setVisibility(View.VISIBLE);
-                unTextView.setText("ERROR");
+                unTextView.setText("Hiciste cagada");
             }
         });
 
     }
+
 }
